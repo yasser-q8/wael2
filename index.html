@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مركز تراست | صيانة الأجهزة الكهربائية - الإسكندرية</title>
+<meta name="description" content="مركز تراست لصيانة الأجهزة الكهربائية في الإسكندرية - ثلاجات، غسالات، بوتاجازات، مكيفات. خدمة سريعة وضمان على الصيانة.">
+<link rel="icon" href="https://i.postimg.cc/vHbYGnf2/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ================= إعدادات عامة ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#0d3b66;
+  --blue-2:#14548f;
+  --blue-light:#1e7fd4;
+  --accent:#ff9500;
+  --accent-dark:#e07f00;
+  --bg:#f4f8fc;
+  --white:#ffffff;
+  --text:#1b2a3a;
+  --muted:#6b7c93;
+  --border:#e2ebf4;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(13,59,102,.08);
+  --shadow-lg:0 20px 50px rgba(13,59,102,.15);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Cairo',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin-inline:auto}
+
+/* ================= الهيدر ================= */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 20px rgba(13,59,102,.05);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{
+  width:58px;height:58px;object-fit:contain;border-radius:14px;
+  background:#fff;padding:4px;box-shadow:var(--shadow);
+}
+.brand-text strong{display:block;font-size:20px;font-weight:900;color:var(--blue);line-height:1.4}
+.brand-text span{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{
+  padding:9px 15px;border-radius:10px;font-weight:700;font-size:15px;color:var(--blue);
+  transition:.25s;
+}
+.nav a:hover{background:#eaf3fc;color:var(--blue-light)}
+.nav a.cta{
+  background:linear-gradient(135deg,var(--blue-light),var(--blue-2));
+  color:#fff;box-shadow:0 6px 18px rgba(30,127,212,.35);
+}
+.nav a.cta:hover{transform:translateY(-2px);color:#fff}
+
+.menu-btn{
+  display:none;background:none;border:2px solid var(--border);border-radius:10px;
+  font-size:22px;padding:4px 12px;color:var(--blue);cursor:pointer;
+}
+
+/* ================= الهيرو ================= */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255,149,0,.22), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(30,127,212,.35), transparent 50%),
+    linear-gradient(135deg,#0a2d4d 0%,#0d3b66 45%,#14548f 100%);
+  color:#fff;
+  padding:70px 0 90px;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size:26px 26px;opacity:.7;pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+  padding:7px 16px;border-radius:50px;font-size:14px;font-weight:700;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(28px,4.4vw,46px);font-weight:900;line-height:1.45;margin-bottom:16px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:17px;color:#d6e6f7;max-width:600px;margin-bottom:28px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 28px;border-radius:12px;font-weight:800;font-size:16px;
+  border:none;cursor:pointer;transition:.25s;font-family:inherit;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ffb547);color:#3a2200;box-shadow:0 12px 28px rgba(255,149,0,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(255,149,0,.45)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
+.btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 12px 28px rgba(37,211,102,.35)}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(37,211,102,.45)}
+
+.hero-card{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  border-radius:26px;padding:30px;backdrop-filter:blur(8px);text-align:center;
+}
+.hero-card img{
+  width:190px;height:190px;object-fit:contain;margin:0 auto 18px;
+  background:#fff;border-radius:24px;padding:14px;box-shadow:var(--shadow-lg);
+}
+.hero-card h3{font-size:20px;font-weight:900;margin-bottom:6px}
+.hero-card p{font-size:14px;color:#cfe2f5;margin:0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.hero-stats div{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 6px}
+.hero-stats b{display:block;font-size:20px;color:var(--accent);font-weight:900}
+.hero-stats small{font-size:11.5px;color:#d6e6f7}
+
+/* ================= الأقسام ================= */
+section{padding:80px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 50px}
+.section-tag{
+  display:inline-block;background:#e7f2fd;color:var(--blue-light);
+  font-weight:800;font-size:13.5px;padding:6px 18px;border-radius:50px;margin-bottom:14px;
+}
+.section-head h2{font-size:clamp(24px,3.2vw,36px);font-weight:900;color:var(--blue);margin-bottom:12px}
+.section-head p{color:var(--muted);font-size:16px}
+
+/* من نحن */
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-text h3{font-size:26px;font-weight:900;color:var(--blue);margin-bottom:16px}
+.about-text p{color:#43566b;margin-bottom:16px;font-size:16px}
+.about-list{list-style:none;display:grid;gap:12px;margin-top:22px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:#33465c}
+.about-list .tick{
+  flex:0 0 26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
+  display:grid;place-items:center;font-size:14px;font-weight:900;margin-top:4px;
+}
+.about-visual{
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  border-radius:26px;padding:40px;color:#fff;box-shadow:var(--shadow-lg);
+  display:grid;gap:18px;
+}
+.about-visual .item{background:rgba(255,255,255,.12);border-radius:14px;padding:16px 20px}
+.about-visual .item b{display:block;font-size:16px;margin-bottom:4px}
+.about-visual .item small{color:#d6e6f7;font-size:13.5px}
+
+/* الخدمات */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.service-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 24px;text-align:center;transition:.3s;box-shadow:var(--shadow);
+}
+.service-card:hover{transform:translateY(-8px);border-color:#bcdcf7;box-shadow:var(--shadow-lg)}
+.service-icon{
+  width:70px;height:70px;margin:0 auto 16px;border-radius:20px;
+  display:grid;place-items:center;font-size:34px;
+  background:linear-gradient(135deg,#e7f2fd,#d3e7fb);
+}
+.service-card h4{font-size:18px;font-weight:800;color:var(--blue);margin-bottom:8px}
+.service-card p{font-size:14.5px;color:var(--muted)}
+
+/* المعرض */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.gallery-item{
+  position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;
+  background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);
+  transition:.3s;
+}
+.gallery-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:.4s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item .ph{
+  width:100%;height:100%;display:grid;place-content:center;gap:6px;text-align:center;
+  background:repeating-linear-gradient(45deg,#f7fbff,#f7fbff 12px,#eef6ff 12px,#eef6ff 24px);
+  border:2px dashed #b9d6f2;border-radius:var(--radius);color:var(--blue-2);
+}
+.gallery-item .ph span{font-weight:900;font-size:17px}
+.gallery-item .ph small{color:var(--muted);font-size:12.5px}
+.gallery-item .num{
+  position:absolute;top:10px;inset-inline-start:10px;z-index:3;
+  background:linear-gradient(135deg,var(--accent),#ffb547);
+  color:#3a2200;font-weight:900;font-size:14px;
+  min-width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  box-shadow:0 6px 16px rgba(255,149,0,.4);
+}
+
+/* نموذج الطلب */
+.order-section{background:linear-gradient(180deg,#eef6ff 0%, #f4f8fc 100%)}
+.form-wrap{
+  background:#fff;border-radius:26px;box-shadow:var(--shadow-lg);
+  padding:clamp(24px,4vw,46px);max-width:900px;margin:0 auto;border:1px solid var(--border);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:800;font-size:14.5px;color:var(--blue)}
+.field label .req{color:#e74c3c}
+.field input,.field select,.field textarea{
+  font-family:inherit;font-size:15px;color:var(--text);
+  padding:13px 16px;border:1.6px solid var(--border);border-radius:12px;
+  background:#fbfdff;transition:.2s;width:100%;
+}
+.field textarea{resize:vertical;min-height:120px;line-height:1.8}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--blue-light);background:#fff;
+  box-shadow:0 0 0 4px rgba(30,127,212,.12);
+}
+.field .hint{font-size:12.5px;color:var(--muted)}
+.error-msg{color:#e74c3c;font-size:12.5px;font-weight:700;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#e74c3c;background:#fff6f6}
+.field.invalid .error-msg{display:block}
+
+.form-actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center}
+.form-actions .btn{min-width:250px;justify-content:center}
+.form-note{
+  margin-top:18px;text-align:center;font-size:13.5px;color:var(--muted);
+  background:#f2f9ff;border:1px dashed #bcdcf7;border-radius:12px;padding:12px;
+}
+
+/* التواصل */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.contact-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;text-align:center;box-shadow:var(--shadow);transition:.3s;
+}
+.contact-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.contact-card .ico{font-size:34px;margin-bottom:12px}
+.contact-card h4{color:var(--blue);font-weight:800;margin-bottom:6px}
+.contact-card p,.contact-card a{color:var(--muted);font-size:15px;direction:ltr;display:inline-block}
+.contact-card a:hover{color:var(--blue-light)}
+
+/* الفوتر */
+footer{background:var(--blue);color:#cfe2f5;padding:50px 0 24px;margin-top:20px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:34px}
+.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.footer-brand img{width:62px;height:62px;object-fit:contain;background:#fff;border-radius:14px;padding:5px}
+.footer-brand strong{color:#fff;font-size:19px;font-weight:900;display:block}
+.footer-brand small{font-size:12.5px;color:#a9c6e2}
+footer h5{color:#fff;font-size:16px;font-weight:800;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer ul a{font-size:14.5px;transition:.2s}
+footer ul a:hover{color:var(--accent);padding-inline-start:5px}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.13);padding-top:20px;text-align:center;
+  font-size:13.5px;color:#a9c6e2;
+}
+
+/* زر واتساب عائم */
+.float-wa{
+  position:fixed;bottom:22px;inset-inline-start:22px;z-index:900;
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  display:grid;place-items:center;color:#fff;font-size:30px;
+  box-shadow:0 12px 30px rgba(37,211,102,.45);
+  transition:.3s;animation:pulse 2.4s infinite;
+}
+.float-wa:hover{transform:scale(1.1)}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* التنبيه */
+.toast{
+  position:fixed;bottom:30px;inset-inline-end:30px;z-index:2000;
+  background:var(--blue);color:#fff;padding:14px 24px;border-radius:12px;
+  font-weight:700;box-shadow:var(--shadow-lg);
+  opacity:0;transform:translateY(20px);pointer-events:none;transition:.35s;
+}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* لايت بوكس */
+.lightbox{
+  position:fixed;inset:0;background:rgba(6,22,40,.92);z-index:3000;
+  display:none;place-items:center;padding:24px;
+}
+.lightbox.open{display:grid}
+.lightbox img{max-width:92vw;max-height:86vh;border-radius:14px;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.lightbox .close{
+  position:absolute;top:22px;inset-inline-end:26px;color:#fff;font-size:38px;
+  cursor:pointer;line-height:1;background:none;border:none;
+}
+
+/* ================= الاستجابة ================= */
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero p{margin-inline:auto}
+  .hero-btns{justify-content:center}
+  .about-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  .nav{
+    position:absolute;top:100%;inset-inline:0;background:#fff;
+    flex-direction:column;align-items:stretch;gap:4px;padding:14px;
+    border-bottom:1px solid var(--border);box-shadow:var(--shadow-lg);
+    display:none;
+  }
+  .nav.open{display:flex}
+  .nav a{padding:12px 16px}
+  .form-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:26px}
+  section{padding:60px 0}
+  .float-wa{width:54px;height:54px;font-size:26px}
+  .brand-text span{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= الهيدر ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#home" class="brand">
+      <img src="https://i.postimg.cc/vHbYGnf2/logo.jpg" alt="شعار مركز تراست">
+      <div class="brand-text">
+        <strong>مركز تراست</strong>
+        <span>لصيانة الأجهزة الكهربائية - الإسكندرية</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من نحن</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#gallery">أعمالنا</a>
+      <a href="#order">طلب صيانة</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="#order" class="cta">اطلب صيانة الآن</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
+  </div>
+</header>
+
+<!-- ================= الهيرو ================= -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <span class="hero-badge">⚡ خدمة سريعة في الإسكندرية • فنيون متخصصون • ضمان على الصيانة</span>
+      <h1>مركز <span>تراست</span> لصيانة الأجهزة الكهربائية</h1>
+      <p>
+        نُصلح جميع الأجهزة المنزلية الكهربائية في <strong>الإسكندرية</strong> بأيدي فنيين محترفين وبقطع غيار أصلية.
+        ثلاجات، غسالات، بوتاجازات، مكيفات، فريزرات وأكثر — مع فحص دقيق وضمان على العمل.
+      </p>
+      <div class="hero-btns">
+        <a href="#order" class="btn btn-primary">🔧 اطلب صيانة الآن</a>
+        <a href="#services" class="btn btn-ghost">تعرف على خدماتنا</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="https://i.postimg.cc/vHbYGnf2/logo.jpg" alt="مركز تراست">
+      <h3>مركز تراست</h3>
+      <p>ثقة • إتقان • سرعة في الخدمة</p>
+      <div class="hero-stats">
+        <div><b>+10</b><small>سنوات خبرة</small></div>
+        <div><b>+5000</b><small>عميل راضٍ</small></div>
+        <div><b>100%</b><small>ضمان الصيانة</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= من نحن ================= -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">من نحن</span>
+      <h2>تعريف بمركز تراست</h2>
+      <p>مركز متخصص في صيانة وإصلاح الأجهزة الكهربائية المنزلية في الإسكندرية، نعمل على إعادة أجهزتك للعمل بكفاءة عالية وبأقل تكلفة ممكنة.</p>
+    </div>
+
+    <div class="about-inner">
+      <div class="about-text">
+        <h3>خبرة تُعتمد عليها في صيانة أجهزتك</h3>
+        <p>
+          <strong>مركز تراست</strong> هو مركز متخصص في صيانة الأجهزة الكهربائية المنزلية في
+          <strong>مدينة الإسكندرية</strong>، يقدم خدماته للأسر والمنازل والمطاعم والمنشآت الصغيرة.
+          نعتمد في عملنا على فريق من الفنيين المتخصصين، وأدوات فحص حديثة، وقطع غيار أصلية مضمونة.
+        </p>
+        <p>
+          نؤمن بأن العميل يستحق خدمة واضحة وصادقة، لذلك نقوم بفحص الجهاز بدقة،
+          وتوضيح المشكلة والتكلفة قبل البدء بالعمل، ولا نستلم أي مبلغ قبل إتمام
+          الإصلاح والتأكد من عمل الجهاز بشكل سليم.
+        </p>
+
+        <ul class="about-list">
+          <li><span class="tick">✓</span> فحص أولي دقيق وتشخيص واضح للمشكلة قبل الإصلاح.</li>
+          <li><span class="tick">✓</span> صيانة جميع الماركات والموديلات المحلية والمستوردة.</li>
+          <li><span class="tick">✓</span> قطع غيار أصلية مع ضمان على القطعة والصيانة.</li>
+          <li><span class="tick">✓</span> خدمة الصيانة في الموقع داخل الإسكندرية أو داخل المركز حسب الحالة.</li>
+          <li><span class="tick">✓</span> أسعار مناسبة وشفافة بدون تكاليف مخفية.</li>
+        </ul>
+      </div>
+
+      <div class="about-visual">
+        <div class="item">
+          <b>🔍 فحص وتشخيص</b>
+          <small>نحدد سبب العطل بدقة باستخدام أجهزة قياس حديثة.</small>
+        </div>
+        <div class="item">
+          <b>🛠️ إصلاح احترافي</b>
+          <small>إصلاح أو استبدال القطع التالفة بقطع أصلية مضمونة.</small>
+        </div>
+        <div class="item">
+          <b>✅ اختبار ما بعد الصيانة</b>
+          <small>نجرب الجهاز أمام العميل للتأكد من زوال المشكلة تماماً.</small>
+        </div>
+        <div class="item">
+          <b>🚚 خدمة سريعة في الإسكندرية</b>
+          <small>الوصول في أسرع وقت ممكن وتقليل مدة تعطّل الجهاز.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= الخدمات ================= -->
+<section id="services" style="background:#fff">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">خدماتنا</span>
+      <h2>ماذا نُصلح في مركز تراست؟</h2>
+      <p>نتعامل مع جميع الأجهزة الكهربائية المنزلية، صيانة كاملة أو إصلاح أعطال بسيطة.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧊</div>
+        <h4>صيانة الثلاجات</h4>
+        <p>عدم التبريد، تسريب الماء، أصوات غريبة، مشاكل الفريزر والكمبروسر.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌀</div>
+        <h4>صيانة الغسالات</h4>
+        <p>عدم العصر، عدم التصريف، اهتزاز قوي، أعطال لوحة التحكم.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h4>صيانة البوتاجازات</h4>
+        <p>الأفران، عيون الغاز، الشواية، مشاكل الإشعال وتنظيف الفتحات.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h4>صيانة المكيفات</h4>
+        <p>تركيب، تنظيف، شحن فريون، صيانة السبليت والشباك والمركزي.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥶</div>
+        <h4>صيانة الفريزرات</h4>
+        <p>ضعف التجميد، تراكم الثلج، مشاكل التبريد الكهربائي.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🍽️</div>
+        <h4>غسالات الأطباق</h4>
+        <p>عدم التنظيف الجيد، مشاكل التصريف، تسريب المياه، لوحة التحكم.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚿</div>
+        <h4>السخانات الكهربائية</h4>
+        <p>عدم التسخين، تسريب المياه، أعطال الترموستات وعنصر التسخين.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📺</div>
+        <h4>أجهزة أخرى</h4>
+        <p>الميكروويف، النشافة، المكنسة الكهربائية، ومختلف الأجهزة المنزلية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= معرض الصور ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">أعمالنا</span>
+      <h2>معرض صور الأجهزة والأعمال</h2>
+      <p>صور من أعمال الصيانة التي قام بها مركز تراست (سيتم تحديث الصور تباعاً).</p>
+    </div>
+
+    <!-- ✅ يتم توليد البطاقات تلقائياً من مصفوفة IMAGES في الجافاسكربت بالأسفل -->
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ================= نموذج طلب الصيانة ================= -->
+<section class="order-section" id="order">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">طلب صيانة</span>
+      <h2>سجّل مشكلتك وسنتواصل معك</h2>
+      <p>املأ البيانات التالية، وعند الضغط على زر الإرسال سيتم فتح واتساب مع رسالة جاهزة تحتوي كل التفاصيل.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form id="orderForm" novalidate>
+        <div class="form-grid">
+
+          <!-- نوع الجهاز -->
+          <div class="field" id="f-device">
+            <label for="device">نوع الجهاز <span class="req">*</span></label>
+            <select id="device" name="device" required>
+              <option value="">— اختر نوع الجهاز —</option>
+              <option>ثلاجة</option>
+              <option>غسالة</option>
+              <option>بوتاجاز</option>
+              <option>مكيف</option>
+              <option>فريزر</option>
+              <option>غسالة أطباق</option>
+              <option>سخان مياه</option>
+              <option>ميكروويف</option>
+              <option>فرن كهربائي</option>
+              <option>نشافة ملابس</option>
+              <option>جهاز آخر</option>
+            </select>
+            <span class="error-msg">الرجاء اختيار نوع الجهاز</span>
+          </div>
+
+          <!-- الماركة -->
+          <div class="field">
+            <label for="brand">الماركة / الموديل <span class="hint">(اختياري)</span></label>
+            <input type="text" id="brand" name="brand" placeholder="مثال: توشيبا / سامسونج / LG">
+          </div>
+
+          <!-- وصف المشكلة -->
+          <div class="field full" id="f-problem">
+            <label for="problem">وصف المشكلة <span class="req">*</span></label>
+            <textarea id="problem" name="problem" required
+              placeholder="اكتب وصفاً دقيقاً للمشكلة... مثال: الثلاجة لا تبرد في القسم السفلي وتصدر صوتاً قوياً، والجهاز يعمل منذ 3 سنوات."></textarea>
+            <span class="error-msg">الرجاء كتابة وصف المشكلة</span>
+          </div>
+
+          <!-- الاسم -->
+          <div class="field" id="f-name">
+            <label for="name">الاسم الكامل <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+            <span class="error-msg">الرجاء كتابة الاسم</span>
+          </div>
+
+          <!-- الجوال -->
+          <div class="field" id="f-phone">
+            <label for="phone">رقم الجوال / الواتساب <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="مثال: 01000000000" required>
+            <span class="error-msg">الرجاء كتابة رقم جوال صحيح</span>
+          </div>
+
+          <!-- المنطقة في الإسكندرية -->
+          <div class="field">
+            <label for="address">المنطقة / العنوان في الإسكندرية <span class="hint">(اختياري)</span></label>
+            <input type="text" id="address" name="address" placeholder="مثال: سموحة - العجمي - سيدي بشر">
+          </div>
+
+          <!-- وقت التواصل -->
+          <div class="field">
+            <label for="time">وقت التواصل المفضل <span class="hint">(اختياري)</span></label>
+            <select id="time" name="time">
+              <option value="">— اختر الوقت —</option>
+              <option>صباحاً (8 ص - 12 م)</option>
+              <option>بعد الظهر (12 م - 4 م)</option>
+              <option>مساءً (4 م - 9 م)</option>
+              <option>أي وقت مناسب</option>
+            </select>
+          </div>
+
+          <!-- مكان الصيانة -->
+          <div class="field full">
+            <label for="place">مكان الصيانة <span class="hint">(اختياري)</span></label>
+            <select id="place" name="place">
+              <option value="">— اختر —</option>
+              <option>صيانة في الموقع (عند العميل داخل الإسكندرية)</option>
+              <option>نقل الجهاز إلى المركز</option>
+              <option>لا أعرف / أحتاج استشارة</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-wa" id="sendBtn">
+            <span style="font-size:20px">📲</span> إرسال الطلب عبر واتساب
+          </button>
+        </div>
+
+        <p class="form-note">
+          🔒 بياناتك تُرسل مباشرة إلى واتساب مركز تراست (01115666443) ولا يتم تخزينها في الموقع.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= تواصل معنا ================= -->
+<section id="contact" style="background:#fff">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">تواصل معنا</span>
+      <h2>نحن في خدمتك في الإسكندرية</h2>
+      <p>يمكنك التواصل معنا مباشرة عبر الواتساب أو الاتصال، ونرد عليك في أسرع وقت.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="ico">📞</div>
+        <h4>اتصل بنا</h4>
+        <a class="phone-display" href="#">—</a>
+      </div>
+      <div class="contact-card">
+        <div class="ico">💬</div>
+        <h4>واتساب</h4>
+        <a class="wa-link" href="#" target="_blank" rel="noopener">اضغط للمحادثة</a>
+      </div>
+      <div class="contact-card">
+        <div class="ico">🕒</div>
+        <h4>أوقات العمل</h4>
+        <p style="direction:rtl">يومياً من 8 صباحاً حتى 10 مساءً</p>
+      </div>
+      <div class="contact-card">
+        <div class="ico">📍</div>
+        <h4>الموقع</h4>
+        <p style="direction:rtl">الإسكندرية - مصر</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= الفوتر ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="https://i.postimg.cc/vHbYGnf2/logo.jpg" alt="مركز تراست">
+          <div>
+            <strong>مركز تراست</strong>
+            <small>لصيانة الأجهزة الكهربائية - الإسكندرية</small>
+          </div>
+        </div>
+        <p style="font-size:14.5px">
+          مركز متخصص في صيانة وإصلاح جميع الأجهزة الكهربائية المنزلية في الإسكندرية بجودة عالية وضمان على الخدمة.
+        </p>
+      </div>
+
+      <div>
+        <h5>روابط سريعة</h5>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#gallery">أعمالنا</a></li>
+          <li><a href="#order">طلب صيانة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>تواصل معنا</h5>
+        <ul>
+          <li><a class="wa-link" href="#" target="_blank" rel="noopener">💬 واتساب</a></li>
+          <li><a class="phone-display" href="#">📞 —</a></li>
+          <li><span>📍 الإسكندرية - مصر</span></li>
+          <li><span>🕒 يومياً 8ص - 10م</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> مركز تراست لصيانة الأجهزة الكهربائية - الإسكندرية — جميع الحقوق محفوظة.
+    </div>
+  </div>
+</footer>
+
+<!-- زر واتساب عائم -->
+<a class="float-wa wa-link" href="#" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+
+<!-- تنبيه -->
+<div class="toast" id="toast">تم تجهيز الرسالة، جاري فتح واتساب...</div>
+
+<!-- لايت بوكس -->
+<div class="lightbox" id="lightbox">
+  <button class="close" id="closeLb">&times;</button>
+  <img src="" alt="صورة" id="lbImg">
+</div>
+
+<script>
+/* ============================================================
+   1) إعدادات مهمة — عدّل القيم هنا فقط
+   ============================================================ */
+
+/* 📱 رقم الواتساب بالصيغة الدولية بدون + وبدون مسافات
+   الرقم المصري: 00201115666443  →  201115666443              */
+const WHATSAPP_NUMBER = "201115666443";   // ← رقم مركز تراست بالإسكندرية
+
+/* 🖼️ روابط صور المعرض — ضع رابط كل صورة بين علامتي التنصيص
+   اتركها فارغة "" وسيظهر مكان مخصص مرقّم بالرقم المطلوب.
+   مثال:  1: "https://example.com/fridge.jpg",               */
+const IMAGES = {
+  1: "",   // ← ضع هنا رابط الصورة رقم 1
+  2: "",   // ← ضع هنا رابط الصورة رقم 2
+  3: "",   // ← ضع هنا رابط الصورة رقم 3
+  4: "",   // ← ضع هنا رابط الصورة رقم 4
+  5: "",   // ← ضع هنا رابط الصورة رقم 5
+  6: "",   // ← ضع هنا رابط الصورة رقم 6
+  7: "",   // ← ضع هنا رابط الصورة رقم 7
+  8: "",   // ← ضع هنا رابط الصورة رقم 8
+  9: ""    // ← ضع هنا رابط الصورة رقم 9
+};
+
+/* ============================================================
+   2) توليد معرض الصور تلقائياً
+   ============================================================ */
+(function buildGallery(){
+  const grid = document.getElementById('galleryGrid');
+  const total = Object.keys(IMAGES).length;
+
+  for (let i = 1; i <= total; i++) {
+    const url = (IMAGES[i] || "").trim();
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+
+    if (url) {
+      item.innerHTML =
+        '<span class="num">' + i + '</span>' +
+        '<img src="' + url + '" alt="صورة رقم ' + i + '" loading="lazy">';
+      item.querySelector('img').addEventListener('click', () => openLightbox(url));
+    } else {
+      item.innerHTML =
+        '<span class="num">' + i + '</span>' +
+        '<div class="ph"><span>صورة رقم ' + i + '</span><small>سيتم إضافة الصورة قريباً</small></div>';
+    }
+    grid.appendChild(item);
+  }
+})();
+
+/* ============================================================
+   3) اللايت بوكس (تكبير الصورة)
+   ============================================================ */
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lbImg');
+
+function openLightbox(src){
+  lbImg.src = src;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('closeLb').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+/* ============================================================
+   4) تعبئة روابط الواتساب والهاتف تلقائياً
+   ============================================================ */
+(function fillContacts(){
+  const waURL = "https://wa.me/" + WHATSAPP_NUMBER;
+  document.querySelectorAll('.wa-link').forEach(a => a.href = waURL);
+
+  /* عرض الرقم بصيغة مفهومة: 0020 1115666443 */
+  const phonePretty = "+20 111 566 6443";
+  document.querySelectorAll('.phone-display').forEach(a => {
+    a.textContent = phonePretty;
+    a.href = "tel:+" + WHATSAPP_NUMBER;
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+
+/* ============================================================
+   5) قائمة الجوال
+   ============================================================ */
+const menuBtn = document.getElementById('menuBtn');
+const nav     = document.getElementById('nav');
+menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+/* ============================================================
+   6) إرسال النموذج عبر واتساب
+   ============================================================ */
+const form = document.getElementById('orderForm');
+const toast = document.getElementById('toast');
+
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+function setInvalid(fieldId, isInvalid){
+  document.getElementById(fieldId).classList.toggle('invalid', isInvalid);
+}
+
+/* إزالة التنبيه عند الكتابة */
+['device','problem','name','phone'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => el.closest('.field').classList.remove('invalid'));
+  el.addEventListener('change', () => el.closest('.field').classList.remove('invalid'));
+});
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const device  = document.getElementById('device').value.trim();
+  const brand   = document.getElementById('brand').value.trim();
+  const problem = document.getElementById('problem').value.trim();
+  const name    = document.getElementById('name').value.trim();
+  const phone   = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const time    = document.getElementById('time').value.trim();
+  const place   = document.getElementById('place').value.trim();
+
+  /* التحقق */
+  let ok = true;
+
+  if (!device){ setInvalid('f-device', true); ok = false; } else setInvalid('f-device', false);
+  if (!problem || problem.length < 5){ setInvalid('f-problem', true); ok = false; } else setInvalid('f-problem', false);
+  if (!name){ setInvalid('f-name', true); ok = false; } else setInvalid('f-name', false);
+
+  const phoneDigits = phone.replace(/[^0-9]/g, '');
+  if (phoneDigits.length < 8){ setInvalid('f-phone', true); ok = false; } else setInvalid('f-phone', false);
+
+  if (!ok){
+    const firstErr = document.querySelector('.field.invalid');
+    if (firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+    showToast('⚠️ الرجاء إكمال الحقول المطلوبة');
+    return;
+  }
+
+  /* تجهيز الرسالة */
+  const line = '━━━━━━━━━━━━━━━━━━';
+  let msg = '';
+  msg += '*🔧 طلب صيانة جديد — مركز تراست (الإسكندرية)*\n';
+  msg += line + '\n';
+  msg += '👤 *الاسم:* ' + name + '\n';
+  msg += '📱 *رقم الجوال:* ' + phone + '\n';
+  if (address) msg += '📍 *المنطقة/العنوان:* ' + address + ' - الإسكندرية\n';
+  msg += line + '\n';
+  msg += '🔌 *نوع الجهاز:* ' + device + '\n';
+  if (brand)   msg += '🏷️ *الماركة/الموديل:* ' + brand + '\n';
+  if (place)   msg += '🚚 *مكان الصيانة:* ' + place + '\n';
+  msg += '\n📝 *وصف المشكلة:*\n' + problem + '\n';
+  msg += line + '\n';
+  if (time) msg += '🕒 *وقت التواصل المفضل:* ' + time + '\n';
+  msg += '🌐 تم الإرسال من موقع مركز تراست - الإسكندرية';
+
+  /* فتح واتساب */
+  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+  window.open(url, '_blank');
+
+  showToast('✅ تم تجهيز طلبك، أكمل الإرسال في واتساب');
+  form.reset();
+});
+</script>
+</body>
+</html>
